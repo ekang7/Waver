@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Waver</title>
+    <style>
+        .boxed{
+    display: block; 
+    text-align: left; 
+    width: 50%; 
+    margin: auto; 
+background: #E8EC35;
+border-radius: 15px;
+padding-left: 40px; 
+padding-right: 40px;
+padding-top: 5px; 
+padding-bottom: 5px; 
+margin-bottom: 20px; 
+}
+.inputBox{
+    position: absolute; 
+    left: 35%;  
+ width: 30%; 
+ height: 40px;
+ 
+ border-radius: 15px;
+}
+h1{
+ color: black; 
+ font-size: 40px; 
+}
+#sendButton{
+    background: #FF9900;
+border: 1px solid #000000;
+box-sizing: border-box;
+width: 20%; 
+height: 6vh; 
+font-size: 40px;
+margin-left: 50%; 
+}
+    </style>
+  </head>
+
+  <body style = "background-color: #FA4545">
+    <div class = "boxed" style ="text-align: center; padding-top: 1px; padding-bottom: 1px; "><em><h1 id ="waiterheading">Your Service Requests</h1></em></div>
+
+    <% for(var i = 0; i < customermessages.length; i++) {%>
+        <div class = "boxed"> <em><h1><u>Table #<%= customermessages[i].table %>: <%= customermessages[i].name %></u> <button type = "button" id = "sendButton"><em>DONE</em></button><br><h1><%= customermessages[i].message %></h1></em></div>
+        <% } %>
+  </body>
+</html>

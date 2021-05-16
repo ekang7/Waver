@@ -31,4 +31,9 @@ width: 20%;
 height: 6vh; 
 font-size: 40px;
 margin-left: 50%; 
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+}
+body{
+    font-family:'Times New Roman', Times, serif;
 }

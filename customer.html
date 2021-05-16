@@ -1,19 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Waver</title>
+  <link rel="stylesheet" href="customer.css"/>
+  <style>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waver</title>
-    <link rel="stylesheet" href="customer.css"/>
+.boxed{
+    display: block; 
+    text-align: left; 
+    width: 50%; 
+    margin: auto; 
+background: #E8EC35;
+border-radius: 15px;
+padding-left: 40px; 
+padding-right: 40px;
+padding-top: 5px; 
+padding-bottom: 5px; 
+margin-bottom: 20px; 
+}
+.inputBox{
+    position: absolute; 
+    left: 35%;  
+ width: 30%; 
+ height: 40px;
+ 
+ border-radius: 15px;
+}
+h1{
+ color: black; 
+ font-size: 40px; 
+}
+#sendButton{
+    background: #FF9900;
+border: 1px solid #000000;
+box-sizing: border-box;
+width: 20%; 
+height: 6vh; 
+font-size: 40px;
+margin-left: 50%; 
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+}
+body{
+    font-family:'Times New Roman', Times, serif;
+}
+  </style>
 </head>
-<body>
+<script>document.addEventListener("DOMContentLoaded", ()=>{
+
+  document.getElementById("sendButton").addEventListener("click", function(){
+  
+      alert("Your Request Has Been Submitted!"); 
+  
+  }); 
+
+
+
+});</script>
+<body style = "background-color: #FA4545">
+  <iframe name ="nothing" id ="nothing" style="display:none;"></iframe>
+  <form action="/customermessage" method="POST" target = "nothing">
     <div class = "boxed" style ="text-align: center; padding-top: 1px; padding-bottom: 1px; "><em><h1>Make a Service Request Below!</h1></em></div>
-    <div class = "boxed"> <em><h1>Name: <input class = "inputBox"></input><br> <br>Table #: <input class = "inputBox"></input></h1></em></div>
-   
-
-    <div class = "boxed" style = "padding-bottom: 12%;"> <em><h1>Request: <button type = "button" id = "sendButton"><em>SEND</em></button><br><input class = "inputBox" style = "height: 20%; left: 25%; width: 50%; "></input></h1></em></div>
-
+    <div class = "boxed"> <em><h1>Name: <input  type="text" placeholder="Name" name="name" class = "inputBox" id = "name" required></input><br> <br>Table #: <input  type="text" placeholder="Table #" name="table" class = "inputBox" id = "table" required></input></h1></em></div>
+    <div class = "boxed" style = "padding-bottom: 12%;"> <em><h1>Request: <input type = "submit" id = "sendButton" value = "Submit"></input><br><input type="text" placeholder="message" name="message" class = "inputBox" id = "message" style = "height: 20%; left: 25%; width: 50%; " required></input></h1></em></div>
+  
+  </form>   
 </body>
 </html>
