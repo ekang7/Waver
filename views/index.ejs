@@ -29,7 +29,7 @@ h1{
  color: black; 
  font-size: 40px; 
 }
-#sendButton{
+.sendButton{
     background: #FF9900;
 border: 1px solid #000000;
 box-sizing: border-box;
@@ -39,13 +39,40 @@ font-size: 40px;
 margin-left: 50%; 
 }
     </style>
+    
   </head>
 
   <body style = "background-color: #FA4545">
     <div class = "boxed" style ="text-align: center; padding-top: 1px; padding-bottom: 1px; "><em><h1 id ="waiterheading">Your Service Requests</h1></em></div>
 
     <% for(var i = 0; i < customermessages.length; i++) {%>
-        <div class = "boxed"> <em><h1><u>Table #<%= customermessages[i].table %>: <%= customermessages[i].name %></u> <button type = "button" id = "sendButton"><em>DONE</em></button><br><h1><%= customermessages[i].message %></h1></em></div>
+        <div class = "boxed box"> <em><h1><u>Table #<%= customermessages[i].table %>: <%= customermessages[i].name %></u> <button type = "button" class = "sendButton"><em>DONE</em></button><br><h1><%= customermessages[i].message %></h1></em></div>
         <% } %>
+        <script>
+           
+            document.addEventListener("DOMContentLoaded", ()=>{
+               
+               var orders = document.querySelectorAll(".box");
+               for(let x = 0; x<orders.length; x++)
+               {
+                   orders[x].id = "box"+x; 
+               }
+               const buttons = document.querySelectorAll(".sendButton");
+               for(let x = 0; x<buttons.length; x++)
+               {
+                   buttons[x].id = "button"+x; 
+                  
+               }
+               for (let x = 0; x<buttons.length; x++){
+               buttons[x].addEventListener("click", (event)=>{
+                        alert(x);
+                        document.querySelectorAll(".box")[x].style= "display: none;"; 
+
+                    }, false);}
+               
+            });
+            
+            
+                </script>
   </body>
 </html>
