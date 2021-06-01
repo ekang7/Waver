@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 
-const connectionString = "mongodb+srv://ekang21:Databasemolder424@cluster0.thj6h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const connectionString = "mongodb+srv://ekang21:Databasesmolder424@cluster0.thj6h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
 .then(client => {
         console.log('Connected to Database'); 
@@ -12,7 +12,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         app.listen(3000, function() {
             console.log('listening on 3000');
         });
-        app.set('view engine', 'ejs')
+        app.set('view engine', 'ejs');
 
         app.use(bodyParser.urlencoded({ extended: true }));
 
